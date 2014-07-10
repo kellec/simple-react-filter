@@ -27,7 +27,9 @@ var App = React.createClass({
             <Well>
               <ul>
                 {data.content.map(function(item, index) {
-                  return(<li className={item.slug} key={index}>{item.name}</li>);
+                  return(
+                    <li className={item.slug} key={index}>{item.name}</li>
+                  );
                 })}
               </ul>
             </Well>

@@ -21,16 +21,31 @@ var FilterType = React.createClass({
   render: function() {
     var activeKey =
       this.props.activeKey != null ? this.props.activeKey : this.state.activeKey;
+    var handleSelect = this.handleSelect;
     var title = (<h3>{this.props.title}</h3>);
     return (
       <Panel header={title}>
         <ul className='nav nav-pills nav-stacked'>
           {this.props.filterOptions.map(function(option, index) {
-            return <Filter name={option} key={index} />
+            return <Filter name={option} key={index} onSelect={handleSelect} />
           })}
         </ul>
       </Panel>
     );
+  },
+
+  handleSelect: function (key) {
+    if (this.props.onSelect) {
+      this.props.onSelect(key);
+    }
+
+    if (this.state.activeKey === key) {
+      key = null;
+    }
+
+    this.setState({
+      activeKey: key
+    });
   }
 });
 
