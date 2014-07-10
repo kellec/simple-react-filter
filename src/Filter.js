@@ -6,7 +6,8 @@ var React = require('react/addons');
 var Filter = React.createClass({
   render: function() {
     var classes = React.addons.classSet({
-      'open': this.props.active
+      'is-interactive': true,
+      'active': this.props.active
     });
     var buttonClasses = React.addons.classSet({
       'close': true,

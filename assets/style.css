@@ -9,3 +9,7 @@ body {
 .app {
   padding: 25px;
 }
+
+.is-interactive {
+	cursor: pointer;
+}

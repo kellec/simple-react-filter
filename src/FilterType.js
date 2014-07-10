@@ -24,7 +24,7 @@ var FilterType = React.createClass({
     var title = (<h3>{this.props.title}</h3>);
     return (
       <Panel header={title}>
-        <ul className='nav nav-stacked'>
+        <ul className='nav nav-pills nav-stacked'>
           {this.props.filterOptions.map(function(option, index) {
             return <Filter name={option} key={index} />
           })}
