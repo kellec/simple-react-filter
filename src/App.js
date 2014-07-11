@@ -34,6 +34,28 @@ var App = React.createClass({
     });
   },
 
+  getFilteredItems: function() {
+    if ( this.state.activeFilter === null ) {
+      return data.content;
+    }
+
+    return data.content.filter( function( item ) {
+      return item[ this.state.activeFilterGroup ] === this.state.activeFilter;
+    }.bind( this ) );
+  },
+
+  renderFilteredContent: function(items) {
+    var filteredItems = items.map( function(item, index) {
+      return(<li className={item.slug} key={index}>{item.name}</li>);
+    });
+
+    return (
+      <ul className="h-clearfix">
+        {filteredItems}
+      </ul>
+    );
+  },
+
   render: function() {
     var handleSelect = this.handleSelect;
     var handleUnselect = this.handleUnselect;
@@ -60,13 +82,7 @@ var App = React.createClass({
           <Col md={8}>
             <h2>Teams</h2>
             <Well>
-              <ul>
-                {data.content.map(function(item, index) {
-                  return(
-                    <li className={item.slug} key={index}>{item.name}</li>
-                  );
-                })}
-              </ul>
+              {this.renderFilteredContent(this.getFilteredItems())}
             </Well>
           </Col>
         </Row>

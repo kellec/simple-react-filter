@@ -6,8 +6,8 @@ var Panel = require('react-bootstrap/Panel');
 var FilterItem = require('./FilterItem');
 
 var Filter = React.createClass({
-  getSafeName: function() {
-    return this.props.title.replace(/\s+/g, '-').toLowerCase();
+  getSafeName: function(name) {
+    return name.replace(/\s+/g, '-').toLowerCase();
   },
 
   render: function() {
@@ -15,7 +15,7 @@ var Filter = React.createClass({
     var handleUnselect = this.props.onUnselect;
     var activeFilterKey = this.props.activeFilter;
     var title = (<h3>{this.props.title}</h3>);
-    var slug = this.getSafeName();
+    var slug = this.getSafeName(this.props.title);
 
     return (
       <Panel header={title}>
@@ -25,10 +25,10 @@ var Filter = React.createClass({
 
             return (
               <FilterItem
-                active={activeFilterKey === key}
+                active={activeFilterKey === option}
                 parentFilterGroup={slug}
                 name={option}
-                key={key}
+                key={option}
                 onSelect={handleSelect}
                 onUnselect={handleUnselect} />
             );
