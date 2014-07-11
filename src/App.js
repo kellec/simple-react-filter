@@ -14,20 +14,23 @@ var data = require('./data');
 var App = React.createClass({
   getInitialState: function() {
     return {
-      activeFilter: null
+      activeFilter: null,
+      activeFilterGroup: null
     }
   },
 
-  handleSelect: function (key) {
+  handleSelect: function (key, filterGroup) {
     this.setState({
-      activeFilter: key
+      activeFilter: key,
+      activeFilterGroup: filterGroup
     });
   },
 
   handleUnselect: function (e) {
     e.stopPropagation();
     this.setState({
-      activeFilter: null
+      activeFilter: null,
+      activeFilterGroup: null
     });
   },
 
@@ -35,7 +38,7 @@ var App = React.createClass({
     var handleSelect = this.handleSelect;
     var handleUnselect = this.handleUnselect;
     var activeFilter = this.state.activeFilter;
-    // console.log(this.state.activeFilter)
+    var activeFilterGroup = this.state.activeFilterGroup;
     return (
       <Grid>
         <Row>
@@ -48,6 +51,7 @@ var App = React.createClass({
                 title={filter.filterName}
                 filterOptions={filter.filterOptions}
                 activeFilter={activeFilter}
+                activeFilterGroup={activeFilterGroup}
                 onSelect={handleSelect}
                 onUnselect={handleUnselect}/>
             );

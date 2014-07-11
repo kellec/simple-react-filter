@@ -29,9 +29,8 @@ var FilterItem = React.createClass({
       'close': true,
       'hidden': !this.props.active
     });
-    console.log()
     return (
-      <li className={classes} onClick={this.props.onSelect.bind(null, this.props.key)}>
+      <li className={classes} onClick={this.props.onSelect.bind(null, this.props.key, this.props.parentFilterGroup)}>
         <a>
           {this.props.name}
           <button

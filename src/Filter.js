@@ -25,7 +25,8 @@ var Filter = React.createClass({
 
             return (
               <FilterItem
-                active={activeFilterKey && activeFilterKey === key}
+                active={activeFilterKey === key}
+                parentFilterGroup={slug}
                 name={option}
                 key={key}
                 onSelect={handleSelect}
