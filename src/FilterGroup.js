@@ -5,7 +5,7 @@ var React = require('react');
 var Panel = require('react-bootstrap/Panel');
 var FilterItem = require('./FilterItem');
 
-var Filter = React.createClass({
+var FilterGroup = React.createClass({
   getSafeName: function(name) {
     return name.replace(/\s+/g, '-').toLowerCase();
   },
@@ -39,4 +39,4 @@ var Filter = React.createClass({
   }
 });
 
-module.exports = Filter;
+module.exports = FilterGroup;

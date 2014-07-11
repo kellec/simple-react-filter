@@ -7,7 +7,7 @@ var Row = require('react-bootstrap/Row');
 var Col = require('react-bootstrap/Col');
 var Well = require('react-bootstrap/Well');
 
-var Filter = require('./Filter');
+var FilterGroup = require('./FilterGroup');
 var data = require('./data');
 
 
@@ -68,7 +68,7 @@ var App = React.createClass({
           <h2>Filters</h2>
           {data.filters.map(function(filter, index) {
             return (
-              <Filter
+              <FilterGroup
                 key={index}
                 title={filter.filterName}
                 filterOptions={filter.filterOptions}
