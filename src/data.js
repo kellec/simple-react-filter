@@ -1,7 +1,7 @@
 module.exports = {
   filters: [
     {
-      filterName: 'division',
+      filterName: 'Division',
       filterOptions: [
         'Atlantic',
         'Central',
@@ -10,7 +10,7 @@ module.exports = {
       ]
     },
     {
-      filterName: 'conference',
+      filterName: 'Conference',
       filterOptions: [
         'East',
         'West'

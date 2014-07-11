@@ -10,48 +10,37 @@ var FilterItem = React.createClass({
 
   getInitialState: function () {
     return {
-      active: false
+      active: this.props.active
     };
   },
 
-  handleSelect: function (e) {
-    if (this.props.onSelect) {
-      this.props.onSelect(this.props.key);
-    }
-
-    e.preventDefault();
-
+  componentDidReceiveProps: function() {
     this.setState({
-      active: true
-    });
-  },
-
-  handleUnselect: function (e) {
-    if (this.props.onUnselect) {
-      this.props.onUnselect(this.props.key);
-    }
-    e.stopPropagation()
-    e.preventDefault();
-
-    this.setState({
-      active: false
+      active: this.props.active
     });
   },
 
   render: function() {
     var classes = React.addons.classSet({
       'is-interactive': true,
-      'active': this.state.active
+      'active': this.props.active
     });
     var buttonClasses = React.addons.classSet({
       'close': true,
-      'hidden': !this.state.active
+      'hidden': !this.props.active
     });
+    console.log()
     return (
-      <li className={classes} onClick={this.handleSelect}>
+      <li className={classes} onClick={this.props.onSelect.bind(null, this.props.key)}>
         <a>
           {this.props.name}
-          <button onClick={this.handleUnselect} type="button" className={buttonClasses}><span aria-hidden="true">&times;</span><span className="sr-only">Close</span></button>
+          <button
+            onClick={this.props.onUnselect}
+            type="button"
+            className={buttonClasses}>
+            <span aria-hidden="true">&times;</span>
+            <span className="sr-only">Close</span>
+          </button>
         </a>
       </li>
     );
