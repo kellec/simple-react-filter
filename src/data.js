@@ -18,9 +18,38 @@ module.exports = {
     }
   ],
   content: [
-    { slug: 'anaheim', name: 'Anaheim Ducks', division: 'Pacific', conference: 'West' },
-    { slug: 'chicago', name: 'Chicago Blackhawks', division: 'Central', conference: 'West' },
-    { slug: 'toronto', name: 'Toronto Maple Leafs', division: 'Atlantic', conference: 'East' },
-    { slug: 'pittsburg', name: 'Pittsburg Penguins', division: 'Metropolitan', conference: 'East' }
+    { slug: 'ducks',   name: 'Anaheim Ducks',     division: 'Pacific', conference: 'West' },
+    { slug: 'coyotes', name: 'Arizona Coyotes',   division: 'Pacific', conference: 'West' },
+    { slug: 'flames',  name: 'Calgary Flames',    division: 'Pacific', conference: 'West' },
+    { slug: 'oilers',  name: 'Edmonton Oilers',   division: 'Pacific', conference: 'West' },
+    { slug: 'kings',   name: 'Los Angeles Kings', division: 'Pacific', conference: 'West' },
+    { slug: 'sharks',  name: 'San Jose Sharks',   division: 'Pacific', conference: 'West' },
+    { slug: 'canucks', name: 'Vancouver Canucks', division: 'Pacific', conference: 'West' },
+
+    { slug: 'blackhawks', name: 'Chicago Blackhawks',  division: 'Central', conference: 'West' },
+    { slug: 'avalanche',  name: 'Colorado Avalanche',  division: 'Central', conference: 'West' },
+    { slug: 'stars',      name: 'Dallas Stars',        division: 'Central', conference: 'West' },
+    { slug: 'wild',       name: 'Minnesota Wild',      division: 'Central', conference: 'West' },
+    { slug: 'predators',  name: 'Nashville Predators', division: 'Central', conference: 'West' },
+    { slug: 'blues',      name: 'St. Louis Blues',     division: 'Central', conference: 'West' },
+    { slug: 'jets',       name: 'Winnipeg Jets',       division: 'Central', conference: 'West' },
+
+    { slug: 'bruins',    name: 'Boston Bruins',       division: 'Atlantic', conference: 'East' },
+    { slug: 'sabres',    name: 'Buffalo Sabres',      division: 'Atlantic', conference: 'East' },
+    { slug: 'redwings',  name: 'Detroit Red Wings',   division: 'Atlantic', conference: 'East' },
+    { slug: 'panthers',  name: 'Florida Panthers',    division: 'Atlantic', conference: 'East' },
+    { slug: 'canadiens', name: 'Montreal Canadiens',  division: 'Atlantic', conference: 'East' },
+    { slug: 'senators',  name: 'Ottawa Senators',     division: 'Atlantic', conference: 'East' },
+    { slug: 'lightning', name: 'Tampa Bay Lightning', division: 'Atlantic', conference: 'East' },
+    { slug: 'leafs',     name: 'Toronto Maple Leafs', division: 'Atlantic', conference: 'East' },
+
+    { slug: 'hurricanes', name: 'Carolina Hurricanes',   division: 'Metropolitan', conference: 'East' },
+    { slug: 'jackets',    name: 'Columbus Blue Jackets', division: 'Metropolitan', conference: 'East' },
+    { slug: 'devils',     name: 'New Jersey Devils',     division: 'Metropolitan', conference: 'East' },
+    { slug: 'islanders',  name: 'New York Islanders',    division: 'Metropolitan', conference: 'East' },
+    { slug: 'rangers',    name: 'New York Rangers',      division: 'Metropolitan', conference: 'East' },
+    { slug: 'flyers',     name: 'Philadelphia Flyers',   division: 'Metropolitan', conference: 'East' },
+    { slug: 'penguins',   name: 'Pittsburgh Penguins',   division: 'Metropolitan', conference: 'East' },
+    { slug: 'capitals',   name: 'Washington Capitals',   division: 'Metropolitan', conference: 'East' }
   ]
 };
