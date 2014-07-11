@@ -26,6 +26,18 @@ var Filter = React.createClass({
     });
   },
 
+  handleUnselect: function (e) {
+    if (this.props.onUnselect) {
+      this.props.onUnselect(this.props.key);
+    }
+    e.stopPropagation()
+    e.preventDefault();
+
+    this.setState({
+      active: false
+    });
+  },
+
   render: function() {
     var classes = React.addons.classSet({
       'is-interactive': true,
@@ -36,10 +48,10 @@ var Filter = React.createClass({
       'hidden': !this.state.active
     });
     return (
-      <li className={classes}>
-        <a onClick={this.handleSelect}>
+      <li className={classes} onClick={this.handleSelect}>
+        <a>
           {this.props.name}
-          <button type="button" className={buttonClasses}><span aria-hidden="true">&times;</span><span className="sr-only">Close</span></button>
+          <button onClick={this.handleUnselect} type="button" className={buttonClasses}><span aria-hidden="true">&times;</span><span className="sr-only">Close</span></button>
         </a>
       </li>
     );
