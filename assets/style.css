@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   background: #f9f9f9;
   color: #555;
 }
@@ -11,5 +11,136 @@ body {
 }
 
 .is-interactive {
-	cursor: pointer;
+  cursor: pointer;
+}
+
+.team-enter {
+  opacity: 0.01;
+  transition: opacity .3s ease-in;
+}
+
+.team-enter.team-enter-active {
+  opacity: 1;
+}
+.team-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.team-leave.team-leave-active {
+  opacity: 0.01;
+}
+
+.team {
+  padding: 0;
+  margin-bottom: 0;
+  border: 0;
+}
+@media (min-width: 768px) {
+  .team {
+    width: 50%;
+    float: left;
+  }
+}
+
+.team span {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 10px 15px;
+  color: #fff;
+  background: #535353;
+  transition: background 0.5s;
+}
+
+.team--ducks:hover span {
+  background: #8e744d;
+}
+.team--coyotes:hover span {
+  background: #822435;
+}
+.team--flames:hover span {
+  background: #e23037;
+}
+.team--oilers:hover span {
+  background: #e76d24;
+}
+.team--kings:hover span {
+  background: #000;
+}
+.team--sharks:hover span {
+  background: #11535e;
+}
+.team--canucks:hover span {
+  background: #1a427d;
+}
+.team--blackhawks:hover span {
+  background: #bc2025;
+}
+.team--avalanche:hover span {
+  background: #8b2943;
+}
+.team--stars:hover span {
+  background: #0e5838;
+}
+.team--wild:hover span {
+  background: #0e5837;
+}
+.team--predators:hover span {
+  background: #fcba30;
+}
+.team--blues:hover span {
+  background: #124a9e;
+}
+.team--jets:hover span {
+  background: #1c3261;
+}
+.team--bruins:hover span {
+  background: #fcb614;
+}
+.team--sabres:hover span {
+  background: #1d3160;
+}
+.team--redwings:hover span {
+  background: #ec2328;
+}
+.team--panthers:hover span {
+  background: #c12c39;
+}
+.team--canadiens:hover span {
+  background: #203970;
+}
+.team--senators:hover span {
+  background: #ed1b2f;
+}
+.team--lightning:hover span {
+  background: #1e265a;
+}
+.team--leafs:hover span {
+  background: #272872;
+}
+.team--hurricanes:hover span {
+  background: #c6202f;
+}
+.team--jackets:hover span {
+  background: #1b2d5b;
+}
+.team--devils:hover span {
+  background: #e33a40;
+}
+.team--islanders:hover span {
+  background: #243d87;
+}
+.team--rangers:hover span {
+  background: #1763ad;
+}
+.team--flyers:hover span {
+  background: #f15922;
+}
+.team--penguins:hover span {
+  background: #000;
+}
+.team--capitals:hover span {
+  background: #e61c37;
 }

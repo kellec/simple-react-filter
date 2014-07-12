@@ -1,11 +1,12 @@
 /** @jsx React.DOM */
 'use strict';
 
-var React = require('react');
+var React = require('react/addons');
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+
 var Grid = require('react-bootstrap/Grid');
 var Row = require('react-bootstrap/Row');
 var Col = require('react-bootstrap/Col');
-var Well = require('react-bootstrap/Well');
 
 var FilterGroup = require('./FilterGroup');
 var data = require('./data');
@@ -46,12 +47,14 @@ var App = React.createClass({
 
   renderFilteredContent: function(items) {
     var filteredItems = items.map( function(item, index) {
-      return(<li className={item.slug} key={index}>{item.name}</li>);
+      return(<li className={'list-group-item team team--' + item.slug} key={index}><span>{item.name}</span></li>);
     });
 
     return (
-      <ul className="h-clearfix">
-        {filteredItems}
+      <ul className="list-group h-clearfix">
+        <ReactCSSTransitionGroup transitionName="team">
+          {filteredItems}
+        </ReactCSSTransitionGroup>
       </ul>
     );
   },
@@ -81,9 +84,7 @@ var App = React.createClass({
           </Col>
           <Col md={8}>
             <h2>Teams</h2>
-            <Well>
-              {this.renderFilteredContent(this.getFilteredItems())}
-            </Well>
+            {this.renderFilteredContent(this.getFilteredItems())}
           </Col>
         </Row>
       </Grid>
